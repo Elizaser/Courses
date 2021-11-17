@@ -1,6 +1,7 @@
-#define N 5
 #include <stdio.h>
 #include <locale.h>
+
+#define N 5
 
 void task1();
 void fillUsualMatrix(int matrix[N][N]);
@@ -28,7 +29,9 @@ void snailMatrix(int matrix[N][N]);
 int main()
 {
 	setlocale(LC_ALL, "Rus");
+
 	int button = 0;
+
 	while(1)
 	{
 		
@@ -62,22 +65,22 @@ int main()
 			case 5:
 				return 0;
 		}
-
 	}
 }
 
 void task1()
 {
 	int matrix[N][N];
+
 	fillUsualMatrix(matrix);
 	printf("\nВывод матрицы:\n");
 	printMatrix(matrix);
-
 }
 
 void fillUsualMatrix(int matrix[N][N])
 {
    int counter = 1;
+
    for(int i = 0; i < N; i++)
    {
 	   for(int j = 0; j < N; j++)
@@ -133,6 +136,7 @@ void  printArray(int array[N])
 void reverseArray(int array[N])
 {
 	int swap;
+
 	for(int i = 0, j = N - 1; i != j; i++,j--)
 	{
 		swap = array[i];		
@@ -144,10 +148,10 @@ void reverseArray(int array[N])
 void task3()
 {
 	int matrix[N][N];
+
 	fillBinaryMatrix(matrix);
 	printf("\nВывод двоичной матрицы, где верхний треугольник заполнен 1, а нижний 0 :\n");
 	printMatrix(matrix);
-
 }
 
 void fillBinaryMatrix(int matrix[N][N])
@@ -167,10 +171,10 @@ void fillBinaryMatrix(int matrix[N][N])
 void task4()
 {
 	int matrix[N][N];
+
 	snailMatrix(matrix);
 	printf("\nВывод  матрицы заполненной улиткой :\n");
 	printMatrix(matrix);
-
 }
 
 void snailMatrix(int matrix[N][N])
@@ -181,6 +185,7 @@ void snailMatrix(int matrix[N][N])
 	int backLines = 0;
 	int backColumns = 0;
 	int border = 0; 
+
 	while(counter < N * N + 1)
 	{
 		while(forwardColumns < N - border)
