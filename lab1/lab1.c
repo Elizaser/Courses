@@ -3,9 +3,26 @@
 #include <locale.h>
 
 void task1();
+void fillUsualMatrix(int matrix[N][N]);
+
+void  printMatrix(int matrix[N][N]);
+
 void task2();
+
+
+void fillInputArray(int array[N]);
+
+void  printArray(int array[N]);
+
+void reverseArray(int array[N]);
+
 void task3();
+
+void fillBinaryMatrix(int matrix[N][N]);
+
 void task4();
+
+void snailMatrix(int matrix[N][N]);
 
 
 int main()
@@ -49,26 +66,13 @@ int main()
 	}
 }
 
-void  printMatrix(int matrix[N][N])
+void task1()
 {
-   for(int i = 0; i < N; i++)
-   {
-   	for(int j = 0; j < N; j++)
-	   {
-   		printf("\t%d ", matrix[i][j]);
-	   }
-	   printf("\n");
-   }
-   printf("\n");
-}
+	int matrix[N][N];
+	fillUsualMatrix(matrix);
+	printf("\nВывод матрицы:\n");
+	printMatrix(matrix);
 
-void  printArray(int array[N])
-{
-   for(int i = 0; i < N; i++)
-   {
-		printf("%d ", array[i]);
-   }
-   printf("\n");
 }
 
 void fillUsualMatrix(int matrix[N][N])
@@ -82,6 +86,30 @@ void fillUsualMatrix(int matrix[N][N])
 	   }
    }
 }
+void  printMatrix(int matrix[N][N])
+{
+   for(int i = 0; i < N; i++)
+   {
+   	for(int j = 0; j < N; j++)
+	   {
+   		printf("\t%d ", matrix[i][j]);
+	   }
+	   printf("\n");
+   }
+   printf("\n");
+}
+
+void task2()
+{
+	int array[N];
+
+	fillInputArray(array);
+	printf("Введенный массив:\n");
+	printArray(array);
+ 	reverseArray(array);
+	printf("Массив в обратном порядке:\n");
+	printArray(array);
+ }
 
 
 void fillInputArray(int array[N])
@@ -91,6 +119,35 @@ void fillInputArray(int array[N])
 	{
 		scanf("%d", &array[i]);
 	}
+}
+
+void  printArray(int array[N])
+{
+   for(int i = 0; i < N; i++)
+   {
+		printf("%d ", array[i]);
+   }
+   printf("\n");
+}
+
+void reverseArray(int array[N])
+{
+	int swap;
+	for(int i = 0, j = N - 1; i != j; i++,j--)
+	{
+		swap = array[i];		
+		array[i] = array[j];
+		array[j] = swap;
+	}
+}
+
+void task3()
+{
+	int matrix[N][N];
+	fillBinaryMatrix(matrix);
+	printf("\nВывод двоичной матрицы, где верхний треугольник заполнен 1, а нижний 0 :\n");
+	printMatrix(matrix);
+
 }
 
 void fillBinaryMatrix(int matrix[N][N])
@@ -107,15 +164,13 @@ void fillBinaryMatrix(int matrix[N][N])
 	}
 }
 
-void reverseArray(int array[N])
+void task4()
 {
-	int swap;
-	for(int i = 0, j = N - 1; i != j; i++,j--)
-	{
-		swap = array[i];		
-		array[i] = array[j];
-		array[j] = swap;
-	}
+	int matrix[N][N];
+	snailMatrix(matrix);
+	printf("\nВывод  матрицы заполненной улиткой :\n");
+	printMatrix(matrix);
+
 }
 
 void snailMatrix(int matrix[N][N])
@@ -161,41 +216,15 @@ void snailMatrix(int matrix[N][N])
 	}
 }
 
-void task1()
-{
-	int matrix[N][N];
-	fillUsualMatrix(matrix);
-	printf("\nВывод матрицы:\n");
-	printMatrix(matrix);
 
-}
 
-void task2()
-{
-	int array[N];
 
-	fillInputArray(array);
-	printf("Введенный массив:\n");
-	printArray(array);
- 	reverseArray(array);
-	printf("Массив в обратном порядке:\n");
-	printArray(array);
- }
 
-void task3()
-{
-	int matrix[N][N];
-	fillBinaryMatrix(matrix);
-	printf("\nВывод двоичной матрицы, где верхний треугольник заполнен 1, а нижний 0 :\n");
-	printMatrix(matrix);
 
-}
 
-void task4()
-{
-	int matrix[N][N];
-	snailMatrix(matrix);
-	printf("\nВывод  матрицы заполненной улиткой :\n");
-	printMatrix(matrix);
 
-}
+
+
+
+
+
